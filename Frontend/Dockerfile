@@ -22,8 +22,8 @@ FROM nginx:alpine
 # Vite outputs to 'dist' folder by default
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy custom Nginx configuration if necessary (optional)
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy custom Nginx configuration to enable reverse proxy to the backend
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 

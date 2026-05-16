@@ -39,7 +39,7 @@ module "eks" {
   version = "~> 19.0"
 
   cluster_name    = var.cluster_name
-  cluster_version = "1.30" # Updated to a supported Kubernetes version
+  cluster_version = "1.29" # Updated to a supported Kubernetes version
 
   cluster_endpoint_public_access  = true
   
@@ -55,6 +55,7 @@ module "eks" {
 
       instance_types = ["t3.medium"]
       capacity_type  = "ON_DEMAND"
+      ami_type       = "AL2023_x86_64_STANDARD"
       
       tags = {
         Environment = var.environment

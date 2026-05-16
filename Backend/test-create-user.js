@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./models/User');
 
-mongoose.connect('mongodb://localhost:27017/erp_system_db', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/erp_system_db', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(async () => {
     // Clear old users if needed (optional)
     // await User.deleteMany({});
