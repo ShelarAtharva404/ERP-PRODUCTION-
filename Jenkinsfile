@@ -56,14 +56,21 @@ pipeline {
 
         stage('Deploy to EKS') {
             steps {
-                script {
-                    // Update the image tag in the Kubernetes manifests
-                    sh "sed -i 's|<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/erp-backend:latest|${ECR_REGISTRY}/${BACKEND_REPO}:${env.BUILD_ID}|g' k8s/backend.yaml"
-                    sh "sed -i 's|<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/erp-frontend:latest|${ECR_REGISTRY}/${FRONTEND_REPO}:${env.BUILD_ID}|g' k8s/frontend.yaml"
-                    
-                    // Apply the manifests
-                    sh "kubectl apply -f k8s/backend.yaml"
-                    sh "kubectl apply -f k8s/frontend.yaml"
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-credentials',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    script {
+                        // Update the image tag in the Kubernetes manifests
+                        sh "sed -i 's|<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/erp-backend:latest|${ECR_REGISTRY}/${BACKEND_REPO}:${env.BUILD_ID}|g' k8s/backend.yaml"
+                        sh "sed -i 's|<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/erp-frontend:latest|${ECR_REGISTRY}/${FRONTEND_REPO}:${env.BUILD_ID}|g' k8s/frontend.yaml"
+                        
+                        // Apply the manifests
+                        sh "kubectl apply -f k8s/backend.yaml"
+                        sh "kubectl apply -f k8s/frontend.yaml"
+                    }
                 }
             }
         }
