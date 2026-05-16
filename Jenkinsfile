@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCOUNT_ID = credentials('aws-account-id')
+        AWS_ACCOUNT_ID = '004648433984'
         AWS_REGION     = 'us-east-1'
         ECR_REGISTRY   = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
         FRONTEND_REPO  = 'erp-frontend'
@@ -71,7 +71,6 @@ pipeline {
 
     post {
         always {
-            cleanWs()
             sh "docker logout ${ECR_REGISTRY} || true"
         }
         success {
