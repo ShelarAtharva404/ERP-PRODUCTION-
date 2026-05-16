@@ -1,0 +1,116 @@
+.leave-approval-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.leave-approval-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+.leave-approval-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leave-approval-list-item {
+  background-color: #f9fafb;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: background 0.3s ease;
+}
+
+.leave-approval-list-item:hover {
+  background-color: #f1f5f9;
+}
+
+.leave-approval-list-item span {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.leave-approval-list-item b {
+  color: #111827;
+}
+
+.leave-approval-list-item div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.approve-btn,
+.reject-btn {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.approve-btn {
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: #ffffff;
+}
+
+.reject-btn {
+  background: linear-gradient(to right, #ef4444, #b91c1c);
+  color: #ffffff;
+}
+
+.approve-btn:hover {
+  background: linear-gradient(to right, #16a34a, #15803d);
+  transform: scale(1.03);
+}
+
+.reject-btn:hover {
+  background: linear-gradient(to right, #b91c1c, #991b1b);
+  transform: scale(1.03);
+}
+
+.leave-approval-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .leave-approval-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .leave-approval-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .leave-approval-list-item div {
+    margin-top: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    flex: 1;
+  }
+}

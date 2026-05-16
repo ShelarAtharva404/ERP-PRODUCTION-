@@ -1,0 +1,107 @@
+.attendance-list-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(40, 88, 177, 0.12);
+  padding: 2.5rem 3rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.attendance-list-container:hover {
+  box-shadow: 0 12px 45px rgba(40, 88, 177, 0.25);
+}
+
+.attendance-list-container h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1e40af; /* dark blue */
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.attendance-list-container input[type="text"] {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 16px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  user-select: text;
+}
+
+.attendance-list-container input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px #3b82f6aa;
+}
+
+/* DataTable styles override */
+
+.rdt_Table {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15) !important;
+}
+
+.rdt_TableHeadRow {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.04em;
+}
+
+.rdt_TableCol {
+  border-right: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.rdt_TableRow {
+  transition: background-color 0.25s ease;
+}
+
+.rdt_TableRow:hover {
+  background-color: #e0e7ff !important;
+}
+
+.rdt_TableRowStriped {
+  background-color: #f7f9ff !important;
+}
+
+.rdt_Pagination {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  user-select: none;
+}
+
+.rdt_PaginationButton {
+  background: #3b82f6;
+  border-radius: 8px;
+  color: white;
+  padding: 6px 14px;
+  margin: 0 3px;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.rdt_PaginationButton:hover:not(:disabled) {
+  background: #2563eb;
+  cursor: pointer;
+}
+
+.rdt_PaginationButton:disabled {
+  background: #9bb9ff;
+  cursor: not-allowed;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .attendance-list-container {
+    padding: 1.5rem 1.5rem;
+    overflow-x: auto;
+  }
+}

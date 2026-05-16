@@ -1,0 +1,114 @@
+/* src/components/Forms/ApprovalPanel.css */
+.approval-panel-container {
+  max-width: 650px;
+  margin: 3rem auto;
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.approval-panel-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1d4ed8;
+  text-align: center;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.approval-panel-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #1d4ed8;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.approval-panel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.approval-panel-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.approval-panel-list-item:hover {
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.approval-panel-btn,
+.approve-btn,
+.reject-btn {
+  padding: 0.5rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.approve-btn {
+  background: #16a34a;
+  color: #fff;
+}
+
+.reject-btn {
+  background: #dc2626;
+  color: #fff;
+}
+
+.approve-btn:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+}
+
+.reject-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+.approval-panel-loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .approval-panel-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .approval-panel-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .approval-panel-list-item span {
+    margin-bottom: 0.7rem;
+  }
+
+  .approval-panel-btn {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+}

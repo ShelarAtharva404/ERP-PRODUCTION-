@@ -1,0 +1,123 @@
+.erp-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* Ensures full width */
+  width: 100%; /* responsive full width */
+  height: 64px;
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+  color: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+
+.erp-navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.erp-navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.erp-navbar-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: 0.03em;
+}
+
+.erp-navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.erp-navbar-username {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.erp-navbar-logout-btn {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.erp-navbar-logout-btn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments without changing navbar height */
+@media (max-width: 768px) {
+  .erp-navbar {
+    padding: 0 1rem;
+    /* Keep height 64px */
+  }
+
+  .erp-navbar-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .erp-navbar-title {
+    font-size: 1.1rem;
+  }
+
+  .erp-navbar-username {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .erp-navbar-logout-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .erp-navbar {
+    padding: 0 0.8rem;
+    /* Keep height 64px */
+  }
+
+  .erp-navbar-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .erp-navbar-title {
+    font-size: 1rem;
+  }
+
+  .erp-navbar-username {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .erp-navbar-logout-btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

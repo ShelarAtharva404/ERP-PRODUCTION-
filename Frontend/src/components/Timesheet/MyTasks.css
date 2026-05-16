@@ -1,0 +1,109 @@
+.my-tasks-container {
+  background: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 960px;
+  animation: fadeIn 0.5s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.my-tasks-container h2 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Button Filters */
+.my-tasks-filter {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.my-tasks-filter button {
+  background: linear-gradient(to right, #6366f1, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-tasks-filter button:hover {
+  background: linear-gradient(to right, #4f46e5, #2563eb);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Search Bar */
+.my-tasks-search {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  padding: 0.75rem 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.my-tasks-search:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  transform: scale(1.01);
+}
+
+/* DataTable Wrapper */
+.my-tasks-table {
+  animation: slideUp 0.6s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .my-tasks-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .my-tasks-filter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-tasks-search {
+    width: 90%;
+  }
+}

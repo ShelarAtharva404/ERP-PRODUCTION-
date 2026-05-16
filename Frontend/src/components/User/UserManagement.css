@@ -1,0 +1,334 @@
+.user-management-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 960px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.user-management-container h3 {
+  color: #1e3a8a;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #2563eb;
+  padding-left: 0.8rem;
+  animation: slideDown 0.4s ease;
+}
+
+.user-management-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-management-form input,
+.user-management-form select {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  flex: 1 1 200px;
+  background: #f9fafb;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-management-form input:focus,
+.user-management-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+.user-management-form button {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  flex: 1 1 150px;
+}
+
+.user-management-form button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #1e40af, #2563eb);
+}
+
+.user-management-search {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-management-search:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+.user-management-table {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scroll if needed */
+  padding-bottom: 1rem;
+}
+
+.user-management-table .rdt_TableRow:hover {
+  background-color: #f0f7ff !important;
+  transition: background 0.2s ease;
+}
+
+/* New button styles for Edit and Delete */
+
+.user-management-table .btn {
+   padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  min-width: 80px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+   box-sizing: border-box;
+  margin-bottom: 0.3rem;
+  margin-right: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.user-management-table .btn-edit {
+  background: linear-gradient(to right, #3b82f6, #2563eb); /* blue gradient */
+}
+
+.user-management-table .btn-edit:hover {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  transform: scale(1.05);
+}
+
+.user-management-table .btn-delete {
+  background: linear-gradient(to right, #ef4444, #b91c1c); /* red gradient */
+}
+
+.user-management-table .btn-delete:hover {
+  background: linear-gradient(to right, #b91c1c, #7f1d1d);
+  transform: scale(1.05);
+  
+}
+
+/* Ensure action buttons in Actions column are always in a horizontal row and centered */
+.user-management-table .rdt_TableCell .btn-edit,
+.user-management-table .rdt_TableCell .btn-delete {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 0.15rem 0 0 !important;
+  min-width: 70px;
+  max-width: 120px;
+  box-sizing: border-box;
+}
+
+/* Remove extra margin on last button */
+.user-management-table .rdt_TableCell .btn-delete:last-child {
+  margin-right: 0 !important;
+}
+
+/* Make sure the cell content is not wrapped and is centered horizontally */
+.user-management-table .rdt_TableCell {
+  white-space: nowrap !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  max-width: 220px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+  overflow: visible !important;
+}
+
+/* Set fixed width for DataTable columns for better alignment */
+.user-management-table .rdt_TableCol:nth-child(1), /* Name */
+.user-management-table .rdt_TableCol:nth-child(2), /* Email */
+.user-management-table .rdt_TableCol:nth-child(3), /* Role */
+.user-management-table .rdt_TableCol:nth-child(4)  /* Actions */ {
+  min-width: 120px !important;
+  max-width: 220px !important;
+  width: 180px !important;
+  text-align: center !important;
+}
+
+/* Specifically set Actions column wider for buttons */
+.user-management-table .rdt_TableCol:nth-child(4),
+.user-management-table .rdt_TableCell:nth-child(4) {
+  min-width: 180px !important;
+  max-width: 260px !important;
+  width: 220px !important;
+  text-align: center !important;
+}
+
+/* Remove extra div wrappers from DataTable for actions cell */
+.user-management-table .rdt_TableCell > div {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (max-width: 600px) {
+  .user-management-table .rdt_TableCell {
+    max-width: 120px;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+  .user-management-table .rdt_TableCell .btn-edit,
+  .user-management-table .rdt_TableCell .btn-delete {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 0.2rem 0 !important;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .user-management-table .rdt_TableCell > div {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* Prevent wrapping for actions row on desktop */
+.user-management-table .rdt_TableCell > * {
+  white-space: nowrap !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  width: auto !important;
+  gap: 0 !important;
+}
+
+/* Prevent wrapping on desktop, allow on mobile */
+@media (max-width: 600px) {
+  .user-management-table .rdt_TableCell {
+    max-width: 120px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  .user-management-table .rdt_TableCell > * {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.2rem;
+    width: 100%;
+  }
+  .user-management-table input[type="text"],
+  .user-management-table input[type="email"],
+  .user-management-table select {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 0.2rem 0;
+  }
+}
+
+/* Responsive: fix DataTable column widths and alignment on mobile */
+@media (max-width: 600px) {
+  .user-management-table .rdt_Table {
+    min-width: 480px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    display: block !important;
+  }
+  .user-management-table .rdt_TableHeadRow,
+  .user-management-table .rdt_TableRow {
+    display: table-row !important;
+    width: auto !important;
+  }
+  .user-management-table .rdt_TableCol,
+  .user-management-table .rdt_TableCell {
+    display: table-cell !important;
+    width: auto !important;
+    min-width: 100px !important;
+    max-width: 180px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    white-space: normal !important;
+    box-sizing: border-box;
+    padding: 0.4rem 0.3rem !important;
+    font-size: 0.97rem !important;
+  }
+  .user-management-table .rdt_TableCol:nth-child(1),
+  .user-management-table .rdt_TableCell:nth-child(1) { /* Name */
+    min-width: 120px !important;
+    max-width: 180px !important;
+    width: 140px !important;
+  }
+  .user-management-table .rdt_TableCol:nth-child(2),
+  .user-management-table .rdt_TableCell:nth-child(2) { /* Email */
+    min-width: 140px !important;
+    max-width: 200px !important;
+    width: 160px !important;
+  }
+  .user-management-table .rdt_TableCol:nth-child(3),
+  .user-management-table .rdt_TableCell:nth-child(3) { /* Role */
+    min-width: 90px !important;
+    max-width: 120px !important;
+    width: 100px !important;
+  }
+  .user-management-table .rdt_TableCol:nth-child(4),
+  .user-management-table .rdt_TableCell:nth-child(4) { /* Actions */
+    min-width: 120px !important;
+    max-width: 160px !important;
+    width: 130px !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-button {
+  background-color: #3b82f6; /* blue-500 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2563eb; /* blue-600 */
+}

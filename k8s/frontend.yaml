@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: erp-frontend
+  labels:
+    app: erp-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: erp-frontend
+  template:
+    metadata:
+      labels:
+        app: erp-frontend
+    spec:
+      containers:
+      - name: erp-frontend
+        # In a real CI/CD pipeline, the image tag will be updated dynamically
+        image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/erp-frontend:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: erp-frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: erp-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

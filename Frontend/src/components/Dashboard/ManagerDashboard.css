@@ -1,0 +1,118 @@
+.manager-dashboard-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  background: #1e293b; /* dark slate blue */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.25);
+  padding: 3rem 2.5rem;
+  color: #e0e7ff; /* light lavender */
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.manager-dashboard-container:hover {
+  box-shadow: 0 12px 48px rgba(37, 99, 235, 0.4);
+}
+
+.manager-dashboard-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #60a5fa; /* sky blue */
+  margin-bottom: 1.8rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.manager-section {
+  margin-top: 2.5rem;
+}
+
+/* Form Styles */
+.manager-task-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.manager-task-form select,
+.manager-task-form input {
+  flex: 1 1 200px;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: #334155; /* slate gray */
+  color: #e0e7ff;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.manager-task-form select:focus,
+.manager-task-form input:focus {
+  outline: none;
+  background: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 12px #3b82f6;
+  color: white;
+}
+
+/* Button */
+.manager-task-btn {
+  background: #3b82f6; /* blue-500 */
+  color: #f9fafb;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.manager-task-btn:hover {
+  background: #2563eb; /* blue-600 */
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Table */
+.manager-section table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-top: 1.5rem;
+}
+
+.manager-section th,
+.manager-section td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  background: #334155; /* slate gray */
+  color: #cbd5e1; /* light gray */
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s;
+  vertical-align: middle;
+  border-radius: 12px;
+}
+
+.manager-section th {
+  background: #1e40af; /* blue-800 */
+  color: #bfdbfe; /* lighter blue */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(30, 64, 175, 0.6);
+}
+
+.manager-section tbody tr:hover td {
+  background: #2563eb; /* blue-600 */
+  color: #e0e7ff;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.8);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}

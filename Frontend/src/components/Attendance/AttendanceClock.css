@@ -1,0 +1,50 @@
+.attendance-clock-container {
+  max-width: 360px;
+  margin: 2rem auto;
+  background: #f9fbff;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(40, 88, 177, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.attendance-clock-container:hover {
+  box-shadow: 0 12px 40px rgba(40, 88, 177, 0.3);
+}
+
+.attendance-clock-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.attendance-clock-btn:disabled {
+  background: #9bb9ff;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.attendance-clock-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.75);
+}
+
+.attendance-clock-status {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 1rem;
+  user-select: text;
+}

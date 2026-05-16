@@ -1,0 +1,121 @@
+.register-form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #2563eb, #1e40af);
+  padding: 2rem;
+}
+
+.register-form {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.register-form-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.register-form-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+.register-form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  background: #f9fafb;
+  transition: border 0.25s, box-shadow 0.25s;
+}
+
+.register-form-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+.register-form-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form-button:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+}
+
+.register-error-message {
+  color: #dc2626;
+  margin-top: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.register-success-message {
+  color: #16a34a;
+  margin-top: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.register-form-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.register-form-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.register-form-footer a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.register-form-footer a:hover {
+  color: #1e40af;
+}

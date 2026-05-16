@@ -1,0 +1,69 @@
+.leave-form-container {
+  max-width: 480px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  padding: 2.2rem 2rem 2rem 2rem;
+}
+
+.leave-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.7rem;
+  color: #1e40af;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.leave-form-input {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  margin-bottom: 1.1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f3f6fa;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.leave-form-input:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #e0e7ff;
+}
+
+.leave-form-btn {
+  width: 100%;
+  padding: 0.95rem;
+  background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  margin-top: 0.5rem;
+}
+
+.leave-form-btn:hover {
+  background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+.leave-form-message {
+  margin-top: 1.2rem;
+  color: #16a34a;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .leave-form-container {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+}

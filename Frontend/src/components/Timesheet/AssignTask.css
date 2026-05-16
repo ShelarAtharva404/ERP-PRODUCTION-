@@ -1,0 +1,111 @@
+.assign-task-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #f8fafc, #e2e8f0);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.assign-task-container h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  animation: slideIn 0.6s ease;
+}
+
+/* Form Layout */
+.assign-task-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Inputs & Select */
+.assign-task-container input,
+.assign-task-container select {
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* Ensure consistent width for all fields */
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.assign-task-container input:focus,
+.assign-task-container select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Submit Button */
+.assign-task-container button[type="submit"] {
+  background: linear-gradient(to right, #6366f1, #3b82f6);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  text-transform: uppercase;
+  width: 100%; /* Make button same width as inputs */
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+.assign-task-container button[type="submit"]:hover {
+  background: linear-gradient(to right, #4f46e5, #2563eb);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(67, 56, 202, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .assign-task-container {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .assign-task-container h2 {
+    font-size: 1.8rem;
+  }
+}

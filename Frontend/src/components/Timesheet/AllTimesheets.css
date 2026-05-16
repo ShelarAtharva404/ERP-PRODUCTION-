@@ -1,0 +1,166 @@
+.all-timesheets-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(37, 99, 235, 0.12);
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  overflow-x: auto;
+}
+
+.all-timesheets-container:hover {
+  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.25);
+}
+
+.all-timesheets-container h2 {
+  color: #1d4ed8;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.all-timesheets-container input[type="text"] {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 2rem auto;
+  padding: 12px 16px;
+  display: block;
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.all-timesheets-container input[type="text"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+  outline: none;
+}
+
+/* DataTable wrapper */
+.all-timesheets-container .rdt_Table {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.all-timesheets-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  font-size: 1rem;
+}
+
+.all-timesheets-container th,
+.all-timesheets-container td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.all-timesheets-container thead th {
+  background-color: #1d4ed8;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px 10px 0 0;
+  user-select: none;
+}
+
+.all-timesheets-container tbody tr {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.all-timesheets-container tbody tr:hover {
+  background: #e0e7ff;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
+  transform: translateY(-3px);
+}
+
+.all-timesheets-container tbody tr td:first-child {
+  font-weight: 600;
+}
+
+.all-timesheets-container tbody tr td:last-child {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  min-width: 100px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.action-buttons button:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.action-buttons .btn-success {
+  background-color: #16a34a !important;
+  color: #fff !important;
+  border: none;
+}
+
+.action-buttons .btn-success:hover {
+  background-color: #15803d !important;
+  color: #fff !important;
+}
+
+.action-buttons .btn-danger {
+  background-color: #dc2626 !important;
+  color: #fff !important;
+  border: none;
+}
+
+.action-buttons .btn-danger:hover {
+  background-color: #b91c1c !important;
+  color: #fff !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .all-timesheets-container {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+  }
+
+  .all-timesheets-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .action-buttons button {
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .all-timesheets-container input[type="text"] {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .all-timesheets-container table {
+    font-size: 0.9rem;
+  }
+}

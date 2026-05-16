@@ -1,0 +1,180 @@
+.erp-sidebar {
+  position: fixed;
+  top: 64px; /* below navbar */
+  left: 0;
+  height: calc(100vh - 64px);
+  width: 240px;
+  background: #1e293b;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  transform: translateX(0);
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.erp-sidebar-collapsed {
+  width: 70px;
+}
+
+.erp-sidebar-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #a78bfa;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.erp-sidebar-collapsed .erp-sidebar-title {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.erp-sidebar-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  /* Move toggle button to the LEFT */
+  align-self: flex-start;  /* changed from flex-end to flex-start */
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* On hover: reduce blue color intensity */
+.erp-sidebar-toggle-btn:hover {
+  color: #a5b4fc; /* lighter, less intense blue */
+  transform: scale(1.05); /* slightly smaller scale effect */
+}
+
+.erp-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.erp-sidebar-list-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.erp-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.erp-sidebar-collapsed .erp-sidebar-link {
+  justify-content: center;
+  gap: 0;
+}
+
+.erp-sidebar-collapsed .erp-sidebar-link span:not(.erp-sidebar-icon) {
+  display: none;
+}
+
+.erp-sidebar-link:hover {
+  background: #475569;
+  color: #fff;
+}
+
+.erp-sidebar-list-item.active .erp-sidebar-link {
+  background: #6366f1;
+  color: white;
+}
+
+.erp-sidebar-icon {
+  font-size: 1.3rem;
+  color: #818cf8;
+}
+
+/* Mobile hamburger toggle button */
+.erp-sidebar-mobile-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 16px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.5rem;
+  z-index: 1200;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.erp-sidebar-mobile-toggle-btn:hover {
+  color: #a5b4fc;
+}
+
+/* On small screens, sidebar becomes overlay and full width */
+@media (max-width: 768px) {
+  .erp-sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 64px);
+    padding: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 1100;
+    background: #1e293b; /* slightly transparent */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  /* When sidebar is active/open on small screens */
+  .erp-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .erp-sidebar-collapsed {
+    width: 240px; /* On mobile, collapsed means full width */
+  }
+
+  /* Show mobile hamburger toggle */
+  .erp-sidebar-mobile-toggle-btn {
+    display: block;
+  }
+
+  /* Hide desktop toggle button on mobile */
+  .erp-sidebar-toggle-btn {
+    display: none;
+  }
+}
+
+/* On very small screens, reduce padding and font sizes */
+@media (max-width: 480px) {
+  .erp-sidebar {
+    padding: 1rem 0.8rem;
+  }
+
+  .erp-sidebar-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .erp-sidebar-icon {
+    font-size: 1.1rem;
+  }
+
+  .erp-sidebar-toggle-btn {
+    font-size: 1.3rem;
+  }
+}

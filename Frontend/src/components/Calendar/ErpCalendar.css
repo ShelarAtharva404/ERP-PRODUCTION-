@@ -1,0 +1,18 @@
+.erp-calendar-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.erp-calendar-container h2 {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 600px) {
+  .erp-calendar-container {
+    padding: 1rem 0.5rem;
+  }
+}

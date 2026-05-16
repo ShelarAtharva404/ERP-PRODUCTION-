@@ -1,0 +1,144 @@
+/* Full page container with smooth gradient animation */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #4f46e5 0%, #3b82f6 50%, #6366f1 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+  padding: 1rem;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Content card with glassmorphism */
+.home-content {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  padding: 3.5rem 3rem;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Animate entrance */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title styling */
+.home-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 1.4rem;
+  background: linear-gradient(90deg, #6366f1, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textPulse 4s ease infinite alternate;
+}
+
+/* Subtle pulsing effect on title */
+@keyframes textPulse {
+  from { filter: brightness(100%); }
+  to { filter: brightness(125%); }
+}
+
+/* Description text */
+.home-message {
+  color: #e0e7ff;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2.8rem;
+  font-weight: 500;
+  text-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* Button styling */
+.home-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 36px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+  text-decoration: none;
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover with smooth glow */
+.home-link:hover {
+  background: linear-gradient(135deg, #3b82f6, #4338ca);
+  box-shadow: 0 15px 45px rgba(59, 130, 246, 0.6);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Floating subtle animation on button */
+.home-link::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  border-radius: 36px;
+}
+
+.home-link:hover::before {
+  opacity: 1;
+  animation: pulseGlow 2.5s ease infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.35; }
+  50% { transform: scale(1.15) rotate(15deg); opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .home-content {
+    padding: 2rem 1.5rem;
+    max-width: 95vw;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-message {
+    font-size: 1rem;
+  }
+
+  .home-link {
+    font-size: 1rem;
+    padding: 0.85rem 2.5rem;
+  }
+}
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
